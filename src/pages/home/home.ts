@@ -25,17 +25,10 @@ export class HomePage {
   	this.comicList();
   }
 
-
   comicList(){
-  
-  	        this.http.get(this.encodedPath)
-            .map(res => res.json()).subscribe(data => {
-                this.comics = data.data.results;
-            },
-            err => {
-                console.log('error in MCU');
-            });
- 
+  	this.offset = 0;
+  	this.encodedPath = this.baseUrl +'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit;
+  	this.getComicsByUrl(this.encodedPath);
   }
 
   comicLoadMore(infiniteScroll){
@@ -49,13 +42,46 @@ export class HomePage {
             err => {
                 console.log('error in MCU');
             });
-
   }
 
   comicSelected(comic){
   	this.navCtrl.push(DetailPage, {
   		comic: comic
   	});
+  }
+
+  comicSearch(ev: any){
+
+  	let val = ev.target.value;
+		if (val && val.trim() != '' && !Number(val) ) {
+			this.searchByTitle(val);
+  	}else{
+  		if (val && val.trim() != '' && Number(val) && val.length > 3){
+  			this.searchByYear(val);
+  		} else {
+  			this.comicList();
+  		}
+  	}
+  }
+
+  searchByTitle(name){
+  	this.encodedPath = this.baseUrl +'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit + '&titleStartsWith=' + name;
+  	this.getComicsByUrl(this.encodedPath)
+  }
+
+  searchByYear(year){
+  	this.encodedPath = this.baseUrl +'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit +'&startYear='+year;
+  	this.getComicsByUrl(this.encodedPath)
+  }
+
+  getComicsByUrl(url){
+    this.http.get(url)
+    .map(res => res.json()).subscribe(data => {
+        this.comics = data.data.results;
+    },
+    err => {
+        console.log('error in MCU');
+    });
   }
 
 }
