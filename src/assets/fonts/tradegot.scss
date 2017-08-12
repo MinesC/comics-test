@@ -1,0 +1,30 @@
+
+$tradegot-font-path: $font-path;
+
+@font-face {
+  font-family: "TradeGothic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("TradeGothic"), local("TradeGothic-Regular"), url("#{$tradegot-font-path}/tradegot.woff") format("woff"), url("#{$tradegot-font-path}/tradegot.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TradeGothicBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("TradeGothicBold"), local("TradeGothic-Bold"), url("#{$tradegot-font-path}/tradegotbol.woff") format("woff"), url("#{$tradegot-font-path}/tradegotbol.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TradeGothicBoldCondensed20";
+  font-style: normal;
+  font-weight: normal;
+  src: local("TradeGothicBoldCondensed20"), local("TradeGothicBoldCondensed20-Regular"), url("#{$tradegot-font-path}/tradegothicboldcondtwenty.woff") format("woff"), url("#{$tradegot-font-path}/tradegothicboldcondtwenty.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TradeGothicCondensed18";
+  font-style: normal;
+  font-weight: normal;
+  src: local("TradeGothicCondensed18"), local("TradeGothicCondensed18-Regular"), url("#{$tradegot-font-path}/tradegothiccondeighteenwoff") format("woff"), url("#{$tradegot-font-path}/tradegothiccondeighteen.ttf") format("truetype");
+}

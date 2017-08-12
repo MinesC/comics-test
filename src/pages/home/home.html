@@ -1,25 +1,38 @@
 <ion-header>
   <ion-navbar color='dark'>
     <ion-title>
-      LISTA DE COMICS
+      <img src="../assets/images/logo.jpg" />
     </ion-title>
   </ion-navbar>
+<ion-searchbar (ionInput)="comicSearch($event)"></ion-searchbar>
 </ion-header>
 
-<ion-content>
-<ion-searchbar (ionInput)="comicSearch($event)"></ion-searchbar>
-	<ion-list no-lines>
-	  <button ion-item *ngFor="let comic of comics" (click)="comicSelected(comic)">
-	    <ion-card>
-			  <ion-card-header>
-			    {{comic.title}}
-			  </ion-card-header>
-			  <ion-card-content>
-				{{ comic.id}}
-			  </ion-card-content>
-		</ion-card>
-	  </button>  
-	</ion-list>
+<ion-content padding>
+
+
+<div class="container-fluid">
+<!-- 				<div class="row"> -->
+<!-- 				<div class="col"> -->
+        <button class="button_box" *ngFor="let comic of comics" (click)="comicSelected(comic)"> 
+            <ion-card class="frontal">
+              <ion-card-title padding>
+                {{comic.title}}
+              </ion-card-title>
+              <img src="{{comic.thumbnail.path}}/landscape_amazing.jpg"/>
+              <ion-card-content>
+              {{ comic.id}}
+              {{comic.thumbnail.path}}/standard_medium.png
+              </ion-card-content>
+            </ion-card>
+        </button> 
+<!--         </div> -->
+<!--         </div> -->
+
+
+
+</div>
+
+
 
 	<ion-infinite-scroll (ionInfinite)="comicLoadMore($event)">
 	<ion-infinite-scroll-content></ion-infinite-scroll-content>

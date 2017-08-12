@@ -1,5 +1,77 @@
 page-home {
-	.cosas{
-		font-size: 200%
+	.searchbar-md {
+		padding: 30px;
+        background-color:#131313;
 	}
+	.searchbar-md .searchbar-input{
+		background-color: rgba(255,255,255, 0.8);
+		height: 60px;
+		font-size: 2.0rem;
+		color: #616161;
+	}
+
+	.searchbar-md .searchbar-search-icon{
+		left: 20px;
+		top: 20px;
+	}
+
+    .card-md{
+        height: 450px;
+    }
+    .card-title-md{
+        font-family: TradeGothicBold;
+        min-width: 100%;
+        height: auto;
+        white-space: normal;
+        text-align:center;
+        margin-top: 15px;
+    }
+    .card-content-md{
+        white-space: normal;
+        text-align:center;
+    }
+    .button_box{
+        margin-left: 10px;
+        width: 20%;
+        background-color: transparent;
+    }
+
+    .container-fluid{
+        text-align:center;
+        align-content: center;
+
+    }
+
+
 }
+//greystripes
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 30px;
+    // height: 100%;
+    // background: url(../../images/dev/juggernaut/pattern_stripes_grey.gif);
+    // background-image: url(../../images/dev/juggernaut/pattern_stripes_grey.gif);
+    // background-position-x: initial;
+    // background-position-y: initial;
+    // background-size: initial;
+    // background-repeat-x: initial;
+    // background-repeat-y: initial;
+    // background-attachment: initial;
+    // background-origin: initial;
+    // background-clip: initial;
+    // background-color: initial;
+    // content: '';
+//font 
+//     font-size: 45px;
+//     line-height: 45px;
+//     font-family: TradeGothicBold,Sans-Serif;
+//     text-transform: uppercase;
+//     font-weight: 400;
+//     margin-top: 0;
+//     margin-bottom: 10px;
+// }
+
+
+
+
