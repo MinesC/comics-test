@@ -6,14 +6,112 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{comic.title}}</ion-title>
+  <ion-navbar color="dark">
+    <ion-title class="details-header" text-center>	{{comic.title.split('#')[0]}}
+    </ion-title>
   </ion-navbar>
+
+
+	<ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segments" mode="ios">
+
+      <ion-segment-button value="description">
+        Description
+      </ion-segment-button>
+
+      <ion-segment-button value="images">
+ 				Images
+      </ion-segment-button>
+
+      <ion-segment-button value="characters">
+        Characters
+      </ion-segment-button>
+
+      <ion-segment-button value="creators">
+        Creators
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
 
 </ion-header>
 
 
 <ion-content padding>
-<h2>{{comic.title}}</h2>
-<p>{{comic.description}}</p>
+  <div [ngSwitch]="segments">
+    <ion-list *ngSwitchCase="'description'" >
+			<ion-grid>
+				<ion-row center>
+					<ion-col>
+					<div class= "post-meta">
+					<h1>{{comic.title}}</h1>
+					</div>
+					</ion-col>
+				</ion-row>
+
+				<ion-row>
+					<ion-col center> 
+					<div padding class = "post-image-right">
+					<img class="portrait" src="{{comic.thumbnail.path}}.jpg"/>
+					</div>
+					</ion-col>
+					<ion-col>
+					<div padding class="post-data">
+					 <h2> Summary:</h2>
+					 <p>{{comic.description}}</p>
+					 </div>
+					 </ion-col>
+				</ion-row>
+
+			</ion-grid>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'images'" disabled>
+	    <div padding class="post-image" *ngFor="let image of comic.images">
+		    <img class="image-size-medium" src="{{image.path}}.jpg">
+	    </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'characters'" disabled>
+      <ion-grid>
+      <div *ngFor="let character of characters">
+          <ion-row>
+            <ion-col>
+              <ion-item text-wrap class="post-char" no-lines>
+                <ion-avatar item-start>
+                  <img padding src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}"/>
+                </ion-avatar>
+                <h2 class="nameTitle">{{character.name}}</h2>
+                <p class="contentStyle">{{character.description}}</p>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </div>
+      </ion-grid>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'creators'" disabled>
+      <ion-grid>
+      <div *ngFor="let creator of creators">
+          <ion-row>
+            <ion-col>
+              <ion-item class="post-char" no-lines>
+                <ion-avatar item-start>
+                  <img padding src="{{creator.thumbnail.path}}.{{creator.thumbnail.extension}}"/>
+                </ion-avatar>
+                <h2 class="nameTitle">{{creator.fullName}}</h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </div>
+      </ion-grid>
+    </ion-list>
+
+
+
+  </div>
+
+
+
+
 </ion-content>

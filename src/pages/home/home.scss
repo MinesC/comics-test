@@ -16,15 +16,15 @@ page-home {
 	}
 
     .card-md{
-        height: 450px;
+        height: 600px;
     }
     .card-title-md{
         font-family: TradeGothicBold;
         min-width: 100%;
-        height: auto;
+        height: 120px;
         white-space: normal;
-        text-align:center;
         margin-top: 15px;
+
     }
     .card-content-md{
         white-space: normal;
@@ -32,45 +32,23 @@ page-home {
     }
     .button_box{
         margin-left: 10px;
-        width: 20%;
+        width: 300px;
         background-color: transparent;
     }
 
     .container-fluid{
         text-align:center;
         align-content: center;
-
+    }
+    // .center{
+    //     align-items:center;
+    // }
+    .portrait{
+        bottom: 0;
     }
 
 
 }
-//greystripes
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 30px;
-    // height: 100%;
-    // background: url(../../images/dev/juggernaut/pattern_stripes_grey.gif);
-    // background-image: url(../../images/dev/juggernaut/pattern_stripes_grey.gif);
-    // background-position-x: initial;
-    // background-position-y: initial;
-    // background-size: initial;
-    // background-repeat-x: initial;
-    // background-repeat-y: initial;
-    // background-attachment: initial;
-    // background-origin: initial;
-    // background-clip: initial;
-    // background-color: initial;
-    // content: '';
-//font 
-//     font-size: 45px;
-//     line-height: 45px;
-//     font-family: TradeGothicBold,Sans-Serif;
-//     text-transform: uppercase;
-//     font-weight: 400;
-//     margin-top: 0;
-//     margin-bottom: 10px;
-// }
 
 
 

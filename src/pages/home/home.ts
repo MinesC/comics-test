@@ -15,10 +15,10 @@ export class HomePage {
 	publicKey = '96558ca279bf14f5aead546ced0cdd2b';
 	baseUrl = 'https://gateway.marvel.com/v1/public/comics?';
 	ts = new Date().getTime();
-	limit = 20;
+	limit = 40;
 	offset = 0;
 	md = Md5.hashStr(this.ts+'acabe8a3a268841c5fb1499bfbcd43829ee8b1e3'+this.publicKey);
-  encodedPath = this.baseUrl +'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit;
+  encodedPath = this.baseUrl +'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit +'&format=comic';
 
 
   constructor(public navCtrl: NavController, public http: Http) {
@@ -27,7 +27,7 @@ export class HomePage {
 
   comicList(){
   	this.offset = 0;
-  	this.encodedPath = this.baseUrl +'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit;
+  	this.encodedPath = this.baseUrl +'&format=comic'+'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit;
   	this.getComicsByUrl(this.encodedPath);
   }
 
@@ -65,12 +65,12 @@ export class HomePage {
   }
 
   searchByTitle(name){
-  	this.encodedPath = this.baseUrl +'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit + '&titleStartsWith=' + name;
+  	this.encodedPath = this.baseUrl +'&format=comic'+'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit + '&titleStartsWith=' + name;
   	this.getComicsByUrl(this.encodedPath)
   }
 
   searchByYear(year){
-  	this.encodedPath = this.baseUrl +'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit +'&startYear='+year;
+  	this.encodedPath = this.baseUrl +'&format=comic'+'&apikey=' + this.publicKey + '&hash='+ this.md+ '&ts='+this.ts + '&limit='+ this.limit +'&startYear='+year;
   	this.getComicsByUrl(this.encodedPath)
   }
 
@@ -78,7 +78,6 @@ export class HomePage {
     this.http.get(url)
     .map(res => res.json()).subscribe(data => {
         this.comics = data.data.results;
-        console.log(this.comics);
     },
     err => {
         console.log('error in MCU');

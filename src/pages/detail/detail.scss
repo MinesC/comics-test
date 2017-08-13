@@ -1,3 +1,113 @@
 page-detail {
+	.content-md{
+		color: white;
+		font-family: TradeGothic;
+	}
+	.details-header{
+		font-family: TradeGothicBoldCondensed20;
+		font-size: 60px;
+		word-wrap: break-word;
+		color:#CCCCCC;
+		text-transform: uppercase;
+	}
+	.toolbar-title-md{
+		font-size: 4rem;
+	}
+	.grid{
+		width: 80%;
+	}
+	.post-meta{
+		text-align: center;
+	}
+	 .post-meta >h1{
+		font-family: TradeGothicBold;
+		font-size: 40px;
+		word-wrap: break-word;
+		color:white;
+		text-transform: uppercase;
+		white-space: normal;
+	}
+
+	.toolbar-background-md {
+		background-color:black;
+		border-color:black;
+	}
+	.segment-ios .segment-button{
+		border: none;
+		font-family: TradeGothicBold;
+		text-transform: uppercase;
+		font-size: 15px;
+		color:#bababa;
+
+	}
+	.segment-ios .segment-button.segment-activated{
+		background-color: #878989;
+		transition: 300ms all linear;
+	}
+
+
+	.post-image {
+		text-align: center; 
+	}
+	.image-size-medium{
+		max-width: 400px !important;  //any size
+	}
+
+	.post-image-right {
+		text-align: right;
+	}
+
+	.post-data{
+		text-align: left;
+	}
+
+	.post-data >h2{
+		font-family: TradeGothicBold;
+	}
+
+	.post-data >p{
+		font-family: TradeGothicBoldCondensed20;
+		font-size: 20px;
+	}
+	.item.item-block.item-md {
+  	background-color: transparent !important;
+	}
+	.ion-item{
+				text-align: center;
+	}
+	.item-md ion-avatar img{
+			width: 100% !important;
+    	height: 100% !important;
+	    max-width: 200px !important;  //any size
+			max-height: 200px !important; 
+	}
+	.item-inner {
+		width:auto;
+	}
+	.portrait{
+	    max-width: 300px !important;
+	      //any size
+	}
+
+	.item-inner{
+		  width: auto !important;
+	    height: auto !important;
+	}
+
+
+
+		.nameTitle{
+			font-family: TradeGothicBoldCondensed20;
+			font-size: 30px;
+			word-wrap: break-word;
+			color:#CCCCCC;
+			text-transform: uppercase;
+		}
+		.contentStyle{
+			color: #D5D8D8;
+			font-size: 20px;
+			font-family: TradeGothicCondensed18;
+		}
+
 
 }

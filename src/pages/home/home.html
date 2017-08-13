@@ -11,25 +11,17 @@
 
 
 <div class="container-fluid">
-<!-- 				<div class="row"> -->
-<!-- 				<div class="col"> -->
+
         <button class="button_box" *ngFor="let comic of comics" (click)="comicSelected(comic)"> 
-            <ion-card class="frontal">
+            <ion-card >
+            <div class="center">
               <ion-card-title padding>
-                {{comic.title}}
+                {{comic.title.split('#')[0]}}
               </ion-card-title>
-              <img src="{{comic.thumbnail.path}}/landscape_amazing.jpg"/>
-              <ion-card-content>
-              {{ comic.id}}
-              {{comic.thumbnail.path}}/standard_medium.png
-              </ion-card-content>
+              <img class="portrait" src="{{comic.thumbnail.path}}/portrait_xlarge.jpg"/>
+              </div>
             </ion-card>
         </button> 
-<!--         </div> -->
-<!--         </div> -->
-
-
-
 </div>
 
 
