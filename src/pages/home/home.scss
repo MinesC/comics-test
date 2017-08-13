@@ -1,8 +1,12 @@
 page-home {
+
 	.searchbar-md {
 		padding: 30px;
-        background-color:#131313;
+        background-image: none;
+        background-color: rgba(0, 0, 0, 0.7) !important;
+
 	}
+
 	.searchbar-md .searchbar-input{
 		background-color: rgba(255,255,255, 0.8);
 		height: 60px;
@@ -14,25 +18,13 @@ page-home {
 		left: 20px;
 		top: 20px;
 	}
+    .container-fluid{
+        background-color: rgba(0, 0, 0, 0.7);
+    }
 
-    .card-md{
-        height: 600px;
-    }
-    .card-title-md{
-        font-family: TradeGothicBold;
-        min-width: 100%;
-        height: 120px;
-        white-space: normal;
-        margin-top: 15px;
-
-    }
-    .card-content-md{
-        white-space: normal;
-        text-align:center;
-    }
     .button_box{
         margin-left: 10px;
-        width: 300px;
+        max-width: 350px;
         background-color: transparent;
     }
 
@@ -40,12 +32,33 @@ page-home {
         text-align:center;
         align-content: center;
     }
-    // .center{
-    //     align-items:center;
-    // }
+
     .portrait{
-        bottom: 0;
+        height: 450px;
     }
+
+    .nameTitle{
+        font-family: TradeGothicBoldCondensed20;
+        font-size: 25px;
+    }
+
+    .contentTitle{
+        font-size: 18px;
+        color: #8F8F8F;
+    }
+    .contentSerie{
+        font-size: 20px;
+        font-family: TradeGothicCondensed18;
+        color:#8F8F8F;
+    }
+
+    .serieName{
+    font-size: 20px;
+        font-family: TradeGothicCondensed18;
+        color:black;
+
+    }
+
 
 
 }

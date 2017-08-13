@@ -78,6 +78,7 @@ export class HomePage {
     this.http.get(url)
     .map(res => res.json()).subscribe(data => {
         this.comics = data.data.results;
+        console.log(this.comics);
     },
     err => {
         console.log('error in MCU');

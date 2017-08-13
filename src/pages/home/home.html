@@ -1,27 +1,32 @@
 <ion-header>
-  <ion-navbar color='dark'>
+  <ion-navbar color="dark">
     <ion-title>
       <img src="../assets/images/logo.jpg" />
     </ion-title>
   </ion-navbar>
-<ion-searchbar (ionInput)="comicSearch($event)"></ion-searchbar>
+
 </ion-header>
 
 <ion-content padding>
 
-
+<ion-searchbar class="seeTr" (ionInput)="comicSearch($event)"></ion-searchbar>
 <div class="container-fluid">
 
         <button class="button_box" *ngFor="let comic of comics" (click)="comicSelected(comic)"> 
             <ion-card >
-            <div class="center">
+
               <ion-card-title padding>
-                {{comic.title.split('#')[0]}}
+                <h2 class="nameTitle">{{comic.title.split('#')[0]}}</h2>
+                <p class="contentTitle">Issue #{{comic.issueNumber}}</p>
               </ion-card-title>
-              <img class="portrait" src="{{comic.thumbnail.path}}/portrait_xlarge.jpg"/>
-              </div>
-            </ion-card>
-        </button> 
+              <img class="portrait" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/>
+
+              <ion-card-content>
+                <p class="contentSerie">From the series:</p>
+                <p class="serieName">{{comic.series.name}}</p>
+              </ion-card-content>
+          </ion-card>
+      </button> 
 </div>
 
 

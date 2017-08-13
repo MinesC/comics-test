@@ -39,7 +39,7 @@
 
 <ion-content padding>
   <div [ngSwitch]="segments">
-    <ion-list *ngSwitchCase="'description'" >
+    <ion-list class="specialBack" *ngSwitchCase="'description'" >
 			<ion-grid>
 				<ion-row center>
 					<ion-col>
@@ -66,13 +66,13 @@
 			</ion-grid>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'images'" disabled>
+    <ion-list class="specialBack" *ngSwitchCase="'images'" disabled>
 	    <div padding class="post-image" *ngFor="let image of comic.images">
 		    <img class="image-size-medium" src="{{image.path}}.jpg">
 	    </div>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'characters'" disabled>
+    <ion-list class="specialBack" *ngSwitchCase="'characters'" disabled>
       <ion-grid>
       <div *ngFor="let character of characters">
           <ion-row>
@@ -90,7 +90,7 @@
       </ion-grid>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'creators'" disabled>
+    <ion-list class="specialBack" *ngSwitchCase="'creators'" disabled>
       <ion-grid>
       <div *ngFor="let creator of creators">
           <ion-row>
@@ -100,6 +100,7 @@
                   <img padding src="{{creator.thumbnail.path}}.{{creator.thumbnail.extension}}"/>
                 </ion-avatar>
                 <h2 class="nameTitle">{{creator.fullName}}</h2>
+                <p class="contentStyle"></p>
               </ion-item>
             </ion-col>
           </ion-row>
